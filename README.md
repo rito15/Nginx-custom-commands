@@ -1,4 +1,10 @@
-# Nginx Custom Commands
+# Nginx Custom Commands (Linux)
+
+## Prerequisite
+
+```sh
+sudo apt update && sudo apt install -y nginx net-tools
+```
 
 ## Setup
 
