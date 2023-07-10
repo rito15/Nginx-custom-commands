@@ -1,7 +1,8 @@
-#!/bin/sh
-# git clone https://github.com/rito15/Nginx-custom-commands.git $HOME/.rito
+#!/bin/bash
 
-cd "$(dirname "$0")" || exit
+#cd "$(dirname "$0")" || exit
+cd "$(dirname -- "$0")" || exit
+
 _COMMANDS_DIR_=$(pwd) # 파일의 현재 경로
 _REGBASHRC_=${_COMMANDS_DIR_}/.nginx-custom-commands/.register-bashrc
 
