@@ -1,0 +1,32 @@
+#!/bin/bash
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_DEF="\x1b[0m"
+_RED="\x1b[31m"
+_GRN="\x1b[32m"
+_ORG="\x1b[33m"
+_BLU="\x1b[34m"
+_MGT="\x1b[35m"
+_CYN="\x1b[36m"
+
+filename=$1
+tempfile=$(mktemp)
+cat "$filename" > "$tempfile"
+
+# Colorize
+sed -Ei 's/(server_name\s*)([^;]+)(\s*;)/\1'"${_ORG}"'\2'"${_DEF}"'\3/g' "$tempfile"
+sed -Ei 's/(listen[^0-9]+)([0-9]+)([^0-9]*)(;)/\1'"${_ORG}"'\2'"${_DEF}"'\3\4/g' "$tempfile"
+
+sed -Ei 's/(root|index|server_name|include)\s/'"${_CYN}"'\1 '"${_DEF}"'/g' "$tempfile"
+sed -Ei 's/(ssl_certificate|ssl_certificate_key|ssl_dhparam)\s/'"${_CYN}"'\1 '"${_DEF}"'/g' "$tempfile"
+
+sed -Ei 's/(location|return|rewrite|proxy_pass|try_files)\s/'"${_RED}"'\1 '"${_DEF}"'/g' "$tempfile"
+sed -Ei 's/(listen)\s/'"${_GRN}"'\1 '"${_DEF}"'/g' "$tempfile"
+sed -Ei 's/(\$[a-zA-Z0-9_]+)([^a-zA-Z0-9_])/'"${_MGT}"'\1'"${_DEF}"'\2/g' "$tempfile"
+
+#sed -Ei 's/([\{\}])/'"${_MGT}"'\1 '"${_DEF}"'/g' "$tempfile"
+
+echo ""
+cat "$tempfile"
+echo ""
+rm "$tempfile"
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

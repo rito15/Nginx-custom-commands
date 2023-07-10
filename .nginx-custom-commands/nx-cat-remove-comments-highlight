@@ -1,0 +1,12 @@
+#!/bin/bash
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+filename=$1
+tempfile1=$(mktemp)
+tempfile=$(mktemp)
+
+nx-cat-remove-comments "$filename" > "$tempfile1"
+nx-highlight "$tempfile1" > "$tempfile"
+
+cat "$tempfile"
+rm "$tempfile"
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

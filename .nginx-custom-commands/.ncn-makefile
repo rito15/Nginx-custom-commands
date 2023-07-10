@@ -1,0 +1,4 @@
+__NCN__=/home/ubuntu/.nginx-custom-commands
+_TARGET_DIR_=$1
+sudo touch $_TARGET_DIR_ && sudo chown $USER $_TARGET_DIR_ && sudo chmod 757 $_TARGET_DIR_
+echo $_TARGET_DIR_

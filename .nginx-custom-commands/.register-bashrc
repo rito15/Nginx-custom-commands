@@ -1,0 +1,6 @@
+#!/bin/bash
+_INPUT=$1
+if ! grep -Fxq "${_INPUT}" ~/.bashrc
+then
+    echo "${_INPUT}" >> ~/.bashrc
+fi

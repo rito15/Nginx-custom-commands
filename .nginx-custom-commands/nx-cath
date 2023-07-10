@@ -1,0 +1,1 @@
+nx-highlight /etc/nginx/sites-available/${1//.conf/}.conf

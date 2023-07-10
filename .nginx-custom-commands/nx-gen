@@ -1,0 +1,3 @@
+_INPUT_=/etc/nginx/sites-available/${1//.conf/}.conf
+sudo touch $_INPUT_ && sudo chmod 755 $_INPUT_
+echo "Nginx Config Gen: $_INPUT_"
