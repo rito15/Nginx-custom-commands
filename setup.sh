@@ -16,4 +16,3 @@ ${_REGBASHRC_} "alias nx-cd-av='cd /etc/nginx/sites-available/'"
 ${_REGBASHRC_} "alias nx-cd-en='cd /etc/nginx/sites-enabled/'"
 
 source ~/.bashrc
-
