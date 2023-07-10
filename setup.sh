@@ -4,7 +4,7 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
 # export PATH=$(echo $PATH | sed 's|:$HOME/.rito-nginx/.nginx-custom-commands/||g')
-export PATH=$(echo $PATH | sed "s|$HOME/.rito-nginx/.nginx-custom-commands/||g" | sed "s|::|:|g")
+export PATH=$(echo $PATH | sed "s|:$HOME/.rito-nginx/.nginx-custom-commands/||g")
 
 _COMMANDS_DIR_=$(pwd) # 파일의 현재 경로
 _REGBASHRC_=${_COMMANDS_DIR_}/.nginx-custom-commands/.register-bashrc
