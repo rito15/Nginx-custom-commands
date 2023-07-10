@@ -1,9 +1,6 @@
 #!/bin/bash
 
-#cd "$(dirname "$0")" || exit
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
-
-# export PATH=$(echo $PATH | sed 's|:$HOME/.rito-nginx/.nginx-utility-commands/||g')
 export PATH=$(echo $PATH | sed "s|:$HOME/.rito-nginx/.nginx-utility-commands/||g")
 
 _COMMANDS_DIR_=$(pwd) # 파일의 현재 경로
