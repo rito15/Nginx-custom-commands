@@ -6,7 +6,7 @@ _COMMANDS_DIR_=$(pwd) # 파일의 현재 경로
 _REGBASHRC_=${_COMMANDS_DIR_}/.nginx-custom-commands/.register-bashrc
 
 sudo chown $USER ${_COMMANDS_DIR_}
-sudo chmod +x ${_COMMANDS_DIR_}/.nginx-custom-commands/ -R
+sudo chmod +x ${_COMMANDS_DIR_} -R
 
 ${_REGBASHRC_} 'export PATH="$PATH:$HOME/.rito-nginx/.nginx-custom-commands/"'
 ${_REGBASHRC_} "alias nx-av='cd /etc/nginx/sites-available/'"
