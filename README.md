@@ -1,4 +1,4 @@
-# Nginx Custom Commands (Linux)
+# Nginx Utility Commands (Linux)
 
 ## Prerequisite
 
@@ -9,7 +9,7 @@ sudo apt update && sudo apt install -y nginx net-tools
 ## Setup
 
 ```sh
-git clone https://github.com/rito15/Nginx-custom-commands.git $HOME/.rito-nginx
+git clone https://github.com/rito15/Nginx-utility-commands.git $HOME/.rito-nginx
 ```
 
 ```sh
