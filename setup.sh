@@ -3,6 +3,8 @@
 #cd "$(dirname "$0")" || exit
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
+export PATH=$(echo $PATH | sed 's|:$HOME/.rito-nginx/.nginx-custom-commands/||g')
+
 _COMMANDS_DIR_=$(pwd) # 파일의 현재 경로
 _REGBASHRC_=${_COMMANDS_DIR_}/.nginx-custom-commands/.register-bashrc
 
@@ -16,6 +18,3 @@ ${_REGBASHRC_} "alias nx-cd-av='cd /etc/nginx/sites-available/'"
 ${_REGBASHRC_} "alias nx-cd-en='cd /etc/nginx/sites-enabled/'"
 
 source ~/.bashrc
-
-export PATH=$(echo $PATH | sed 's|:$HOME/.rito-nginx/.nginx-custom-commands/||g')
-export PATH="$PATH:$HOME/.rito-nginx/.nginx-custom-commands/"
