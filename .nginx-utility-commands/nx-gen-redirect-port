@@ -26,4 +26,6 @@ echo "" >> ${CONF_DIR}
 sudo chmod 755 $CONF_DIR
 sudo ln -s ${CONF_DIR} /etc/nginx/sites-enabled/
 
+sudo service nginx reload
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
